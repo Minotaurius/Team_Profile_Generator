@@ -1,0 +1,29 @@
+{
+  "name": "team_profile_generator-",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minotaurius/Team_Profile_Generator-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minotaurius/Team_Profile_Generator-/issues"
+  },
+  "homepage": "https://github.com/Minotaurius/Team_Profile_Generator-#readme",
+  "dependencies": {
+    "inquirer": "^9.1.0",
+    "jest": "^28.1.3"
+  },
+  "description": ""
+}
