@@ -4,16 +4,16 @@ const manager = (data) => {
     return `
         <div class="cards">
             <div class="card-header">
-                <h3 class="manager-name"></h3>
-                <h4 class="manager-title"></h4>
+                <h3>${data.name}</h3>
+                <h4>Manager</h4>
             </div>
 
             <div class="card-body">
-                <p class="manager-id">ID:</p>
+                <p>ID: ${data.id}</p>
                 <p>Email:
-                <a href="mailto:email@example.com" class="manger-email"></a>
+                <a href="mailto:${data.email}">${data.email}</a>
                 </p>
-                <p>Office: </p>
+                <p>Office: ${data.officeNumber}</p>
             </div>
         </div>
     `
@@ -25,16 +25,16 @@ const engineer = (data) => {
     return `
         <div class="cards">
             <div class="card-header">
-                <h3 class="engineer-name"></h3>
-                <h4 class="engineer-role"></h4>
+                <h3>${data.name}</h3>
+                <h4>Engineer</h4>
             </div>
 
             <div class="card-body">
-                <p class="engineer-id">ID:</p>
+                <p>ID: ${data.id}</p>
                 <p>Email:
-                <a href="mailto:email@example.com"></a>
+                <a href="mailto:${data.email}"></a>
                 </p>
-                <p class="engineer-github">Github:</p>
+                <a href="https://github.com/${data.email}">GitHub</a>
             </div>
         </div>
     `
@@ -42,45 +42,45 @@ const engineer = (data) => {
 
 // template to create intern card
 
-const intern = (data) => {
+const intern = data => {
     return `
         <div class="cards">
             <div class="card-header">
-                <h3 class="intern-name"></h3>
-                <h4 class="intern-role"></h4>
+                <h3>${data.name}</h3>
+                <h4>Intern</h4>
             </div>
 
             <div class="card-body">
-                <p class="intern-id">ID:</p>
-                <p class="intern-email">Email:
-                <a href="mailto:email@example.com"></a>
+                <p>ID: ${data.id}</p>
+                <p>Email:
+                <a href="mailto:${data.email}"></a>
                 </p>
-                <p>School:</p>
+                <p>School: ${data.school}</p>
             </div>
         </div>
     `
 }
 
 
-const makeCards = () => {
+const makeCards = teamArr => {
     let roster = '';
 
     for(let i = 0; i < teamArr.length; i++) {
-        if(teamArr[i].getRole() === 'Manager' ) {
-            roster = manager(teamArr[i])
+        if(teamArr[0]) {
+            roster += manager(teamArr[i])
         }
-        if(teamArr[i].getRole() === 'Engineer' ) {
-            roster = engineer(teamArr[i])
-        }
-        if(teamArr[i].getRole() === 'Intern' ) {
-            roster = intern(teamArr[i])
-        }
+        // if(teamArr[i].getRole() === 'Engineer' ) {
+        //     roster = engineer(teamArr[i])
+        // }
+        // if(teamArr[i].getRole() === 'Intern' ) {
+        //     roster = intern(teamArr[i])
+        // }
     }
     return roster;
 }
 
-const template = (data) => {
-    `
+const template = data => {
+   return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +94,7 @@ const template = (data) => {
     <header class="header">My Team</header>
     
     <div class="card-container">
-        ${makeCards}
+        ${makeCards(data)}
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

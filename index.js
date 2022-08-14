@@ -31,7 +31,7 @@ const managerQuestions = [
     },
     {
         type: 'input',
-        name: 'officeNum',
+        name: 'officeNumber',
         message: "Please enter your office number so the team knows where they can find you"
     },
 ]
@@ -55,7 +55,7 @@ const engineerQuestions = [
     {
         type: 'input',
         name: 'github',
-        message: "Please enter your github link"
+        message: "Please enter your github username"
     },
 ]
 
@@ -85,7 +85,7 @@ const internQuestions = [
 function init() {
     inquirer.prompt(managerQuestions) 
     .then(answers => {
-        let manager = new Manager(answers.name, answers.id, answers.email, answers.github)
+        let manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
         teamArr.push(manager);
         console.log(answers);
     return addEmployees();
@@ -124,11 +124,17 @@ function addEmployees() {
             })
         }
         else if (answer.role === 'Finished Adding Employees') {
-            fs.writeFile ('index.html', )
-            console.log("You're employee list is complete");
+            let htmlTemp = template(teamArr)
+            fs.writeFile ("index.html", htmlTemp, (err) => {
+                if(err) console.log(err)
+                else {
+                    console.log('Employee list written to HTML')
+                }
+            })
+            console.log("Your employee list is complete");
         }
     })
-    }
+}
 
 //calling our functions to prompt users
 init();
