@@ -81,7 +81,7 @@ const internQuestions = [
     },
 ]
 
-function addEmployees(answers) {
+function addEmployees() {
     inquirer.prompt(    {
         type: 'list',
         name: 'role',
@@ -96,21 +96,26 @@ function addEmployees(answers) {
         if (answer.role === 'Engineer') {
             inquirer.prompt(engineerQuestions)
             .then(answers => {
-                console.log(answers)
+                let engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+                teamArr.push(engineer);
+                console.log(answers);
+                return addEmployees();
             })
-            // .then (answers => {
-            //     // const engineer = new Engineer (name, id, email, github)
-            //     const { name, id, email, github } = answers
-            //     teamArr.push(answers)
-            // })
-            // return addEmployees();
         }
         else if(answer.role === 'Intern') {
-            addIntern();
+            inquirer.prompt(internQuestions)
+            .then(answers => {
+                let intern = new Intern(answers.name, answers.id, answers.email, answers.github)
+                teamArr.push(intern);
+                console.log(answers);
+                return addEmployees();
+            })
         }
         else if (answer.role === 'Finsihed Adding Employees') {
             // fs.writeFile c
-            console.log("You're employee list is complete")
+            console.log("You're employee list is complete");
+            console.log(teamArr);
+            return
         }
     })
     }
