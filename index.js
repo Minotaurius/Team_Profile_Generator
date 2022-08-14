@@ -81,7 +81,18 @@ const internQuestions = [
     },
 ]
 
+function init() {
+    inquirer.prompt(managerQuestions) 
+    .then(answers => {
+        let manager = new Manager(answers.name, answers.id, answers.email, answers.github)
+        teamArr.push(manager);
+        console.log(answers);
+    return addEmployees();
+    })
+}
+
 function addEmployees() {
+
     inquirer.prompt(    {
         type: 'list',
         name: 'role',
@@ -119,45 +130,7 @@ function addEmployees() {
         }
     })
     }
-    
-//     answer === Function()
-//     answer === Function()
-//     answer === Function()
-//     no more employees === fs.writeFile
-
-//     addManager()
-//     .then(answers1 => {
-//         addEngineer()
-//         .then(answers2 => {
-//             console.log(answers1,answers2)
-//         })
-//     })
-// }
-
-
-function addManager() {
-    inquirer.prompt(managerQuestions)
-    .then(answers => {
-        console.log(answers)
-    })
-};
-
-function addEngineer() {
-    inquirer.prompt(engineerQuestions)
-    .then(answers => {
-        console.log(answers)
-    })
-};
-
-function addIntern() {
-    inquirer.prompt(internQuestions)
-    .then(answers => {
-        console.log(answers)
-    })
-};
 
 //calling our functions to prompt users
-addEmployees();
-// addManager();
-// addEngineer();
-// addIntern();
+init();
+
