@@ -57,13 +57,40 @@ const engineerQuestions = [
         message: "Please enter your github link"
     },
 ]
+
+const internQuestions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: "Please enter your intern's name"
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: "Please enter your employee ID"
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "Please enter your email so the team knows how to contact you"
+    },
+    {
+        type: 'input',
+        name: 'school',
+        message: "Please enter the school you attend"
+    },
+]
 // employee prompts
 
 // function addEmployees() {
 //     addManager()
-//     .then(answers => {
-//         console.log(answers)
+//     .then(answers1 => {
+//         addEngineer()
+//         .then(answers2 => {
+//             console.log(answers1,answers2)
+//         })
 //     })
+// }
 //     addEngineer()
 //     .then(answers => {
 //         console.log(answers)
@@ -84,7 +111,15 @@ function addEngineer() {
     })
 };
 
+function addIntern() {
+    inquirer.prompt(internQuestions)
+    .then(answers => {
+        console.log(answers)
+    })
+};
+
 //calling our functions to prompt users
-// addEmployees()
+// addEmployees();
 // addManager();
-addEngineer();
+// addEngineer();
+addIntern();
