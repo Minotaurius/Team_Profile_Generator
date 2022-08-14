@@ -80,9 +80,46 @@ const internQuestions = [
         message: "Please enter the school you attend"
     },
 ]
-// employee prompts
 
-// function addEmployees() {
+function addEmployees(answers) {
+    inquirer.prompt(    {
+        type: 'list',
+        name: 'role',
+        message: "What type of employee would you like to add",
+        choices: [
+            'Engineer',
+            'Intern',
+            'Finished Adding Employees'
+        ]
+        })
+    .then (answer => {
+        if (answer.role === 'Engineer') {
+            inquirer.prompt(engineerQuestions)
+            .then(answers => {
+                console.log(answers)
+            })
+            // .then (answers => {
+            //     // const engineer = new Engineer (name, id, email, github)
+            //     const { name, id, email, github } = answers
+            //     teamArr.push(answers)
+            // })
+            // return addEmployees();
+        }
+        else if(answer.role === 'Intern') {
+            addIntern();
+        }
+        else if (answer.role === 'Finsihed Adding Employees') {
+            // fs.writeFile c
+            console.log("You're employee list is complete")
+        }
+    })
+    }
+    
+//     answer === Function()
+//     answer === Function()
+//     answer === Function()
+//     no more employees === fs.writeFile
+
 //     addManager()
 //     .then(answers1 => {
 //         addEngineer()
@@ -91,11 +128,7 @@ const internQuestions = [
 //         })
 //     })
 // }
-//     addEngineer()
-//     .then(answers => {
-//         console.log(answers)
-//     })
-// }
+
 
 function addManager() {
     inquirer.prompt(managerQuestions)
@@ -119,7 +152,7 @@ function addIntern() {
 };
 
 //calling our functions to prompt users
-// addEmployees();
+addEmployees();
 // addManager();
 // addEngineer();
-addIntern();
+// addIntern();
