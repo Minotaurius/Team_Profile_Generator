@@ -117,7 +117,7 @@ function addEmployees() {
         else if(answer.role === 'Intern') {
             inquirer.prompt(internQuestions)
             .then(answers => {
-                let intern = new Intern(answers.name, answers.id, answers.email, answers.github)
+                let intern = new Intern(answers.name, answers.id, answers.email, answers.school)
                 teamArr.push(intern);
                 console.log(answers);
                 return addEmployees();
@@ -125,7 +125,7 @@ function addEmployees() {
         }
         else if (answer.role === 'Finished Adding Employees') {
             let htmlTemp = template(teamArr)
-            fs.writeFile ("index.html", htmlTemp, (err) => {
+            fs.writeFile ("./dist/index.html", htmlTemp, (err) => {
                 if(err) console.log(err)
                 else {
                     console.log('Employee list written to HTML')

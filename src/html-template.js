@@ -32,9 +32,9 @@ const engineer = (data) => {
             <div class="card-body">
                 <p>ID: ${data.id}</p>
                 <p>Email:
-                <a href="mailto:${data.email}"></a>
+                <a href="mailto:${data.email}">${data.email}</a>
                 </p>
-                <a href="https://github.com/${data.email}">GitHub</a>
+                <a href="https://github.com/${data.github}">GitHub</a>
             </div>
         </div>
     `
@@ -53,7 +53,7 @@ const intern = data => {
             <div class="card-body">
                 <p>ID: ${data.id}</p>
                 <p>Email:
-                <a href="mailto:${data.email}"></a>
+                <a href="mailto:${data.email}">${data.email}</a>
                 </p>
                 <p>School: ${data.school}</p>
             </div>
@@ -66,15 +66,15 @@ const makeCards = teamArr => {
     let roster = '';
 
     for(let i = 0; i < teamArr.length; i++) {
-        if(teamArr[0]) {
+        if(teamArr[i].getRole() === 'Manager') {
             roster += manager(teamArr[i])
         }
-        // if(teamArr[i].getRole() === 'Engineer' ) {
-        //     roster = engineer(teamArr[i])
-        // }
-        // if(teamArr[i].getRole() === 'Intern' ) {
-        //     roster = intern(teamArr[i])
-        // }
+        if(teamArr[i].getRole() === 'Engineer' ) {
+            roster += engineer(teamArr[i])
+        }
+        if(teamArr[i].getRole() === 'Intern' ) {
+            roster += intern(teamArr[i])
+        }
     }
     return roster;
 }
