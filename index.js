@@ -34,7 +34,41 @@ const managerQuestions = [
         message: "Please enter your office number so the team knows where they can find you"
     },
 ]
-// manager prompts
+
+const engineerQuestions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: "Please enter your engineer's name"
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: "Please enter your employee ID"
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "Please enter your email so the team knows how to contact you"
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: "Please enter your github link"
+    },
+]
+// employee prompts
+
+// function addEmployees() {
+//     addManager()
+//     .then(answers => {
+//         console.log(answers)
+//     })
+//     addEngineer()
+//     .then(answers => {
+//         console.log(answers)
+//     })
+// }
 
 function addManager() {
     inquirer.prompt(managerQuestions)
@@ -43,4 +77,14 @@ function addManager() {
     })
 };
 
-addManager()
+function addEngineer() {
+    inquirer.prompt(engineerQuestions)
+    .then(answers => {
+        console.log(answers)
+    })
+};
+
+//calling our functions to prompt users
+// addEmployees()
+// addManager();
+addEngineer();
