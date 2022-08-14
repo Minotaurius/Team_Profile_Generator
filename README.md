@@ -9,8 +9,8 @@ This is a terminal command line application that gives users prompts and takes t
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Author](#author)
 * [Demo](#demo)
+* [Author](#author)
 
 
 ## Installation
