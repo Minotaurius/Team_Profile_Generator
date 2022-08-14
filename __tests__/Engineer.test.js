@@ -1,7 +1,7 @@
 const Engineer = require('../lib/Engineer')
 
 test('Creates a new employee with the role of Engineer', () => {
-    const engineer = new Engineer ("Brandon Langer", 001, "brandonslanger@gmail.com", 'https://github.com/minotaurius')
+    const engineer = new Engineer ("Brandon Langer", 3, "brandonslanger@engineer.com", 'https://github.com/minotaurius')
     
     expect(engineer.name).toBe('Brandon Langer');
     expect(engineer.id).toEqual(expect.any(Number));
@@ -10,7 +10,7 @@ test('Creates a new employee with the role of Engineer', () => {
 })
 
 test('Checking that our methods are returning the correct properties', () => {
-    const engineer = new Engineer ("Brandon Langer", 001, "brandonslanger@gmail.com")
+    const engineer = new Engineer ("Brandon Langer", 3, "brandonslanger@engineer.com")
 
     expect(engineer.getName()).toBe(engineer.name);
     expect(engineer.getId()).toEqual(engineer.id);

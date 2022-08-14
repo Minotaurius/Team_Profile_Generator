@@ -1,7 +1,7 @@
 const Intern = require('../lib/Intern')
 
 test('Creates a new employee with the role of Intern', () => {
-    const intern = new Intern ("Brandon Langer", 001, "brandonslanger@gmail.com", 'Minnesota State University Mankato')
+    const intern = new Intern ("Brandon Langer", 4, "brandonslanger@intern.com", 'Minnesota State University Mankato')
     
     expect(intern.name).toBe('Brandon Langer');
     expect(intern.id).toEqual(expect.any(Number));
@@ -10,7 +10,7 @@ test('Creates a new employee with the role of Intern', () => {
 })
 
 test('Checking that our methods are returning the correct properties', () => {
-    const intern = new Employee ("Brandon Langer", 001, "brandonslanger@gmail.com")
+    const intern = new Intern ("Brandon Langer", 4, "brandonslanger@intern.com")
 
     expect(intern.getName()).toBe(intern.name);
     expect(intern.getId()).toEqual(intern.id);

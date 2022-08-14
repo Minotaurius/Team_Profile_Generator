@@ -1,7 +1,7 @@
 const Manager = require('../lib/Manager')
 
 test('Creates an employee with the role of Manager', () => {
-    const manager = new Manager ("Brandon Langer", 001, "brandonslanger@gmail.com", "275A")
+    const manager = new Manager ("Brandon Langer", 2, "brandonslanger@manager.com", "275A")
     
     expect(manager.name).toBe('Brandon Langer');
     expect(manager.id).toEqual(expect.any(Number));
@@ -10,7 +10,7 @@ test('Creates an employee with the role of Manager', () => {
 })
 
 test('Checking that our methods are returning the correct properties', () => {
-    const manager = new Manager ("Brandon Langer", 001, "brandonslanger@gmail.com", "275A")
+    const manager = new Manager ("Brandon Langer", 2, "brandonslanger@manager.com", "275A")
 
     expect(manager.getName()).toBe(manager.name);
     expect(manager.getId()).toEqual(manager.id);
