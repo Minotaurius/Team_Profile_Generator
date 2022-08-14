@@ -1,6 +1,7 @@
 // packages
 const inquirer = require('./node_modules/inquirer');
 const fs = require('fs');
+const template = require('./src/html-template')
 
 // importing classes
 const Employee = require('./lib/Employee');
@@ -122,11 +123,8 @@ function addEmployees() {
                 return addEmployees();
             })
         }
-        else if (answer.role === 'Finsihed Adding Employees') {
-            fs.writeFile ('index.html',`
-            
-            `
-            )
+        else if (answer.role === 'Finished Adding Employees') {
+            fs.writeFile ('index.html', )
             console.log("You're employee list is complete");
         }
     })
