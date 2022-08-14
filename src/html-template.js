@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Profile Generator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">My Team</header>
-    
-    <div class="card-container">
+// template to create manager card 
+
+const manager = () => {
+    return `
         <div class="cards">
             <div class="card-header">
                 <h3 class="manager-name">Brandon</h3>
@@ -25,39 +16,43 @@
                 <p>Office: </p>
             </div>
         </div>
+    `
+}
 
+const engineer = () => {
+    return `
         <div class="cards">
             <div class="card-header">
                 <h3 class="engineer-name">Jeff</h3>
                 <h4 class="engineer-role">Coding Student's Father</h4>
             </div>
-    
+
             <div class="card-body">
                 <p class="engineer-id">ID:</p>
                 <p>Email:
-                    <a href="mailto:email@example.com">brandonslanger@gmail.com</a>
-                    </p>
+                <a href="mailto:email@example.com">brandonslanger@gmail.com</a>
+                </p>
                 <p class="engineer-github">Github:</p>
             </div>
         </div>
+    `
+}
 
+const intern = () => {
+    return `
         <div class="cards">
             <div class="card-header">
                 <h3 class="intern-name">Alex</h3>
                 <h4 class="intern-role">Coding Student's Brother</h4>
             </div>
-    
+
             <div class="card-body">
                 <p class="intern-id">ID:</p>
                 <p class="intern-email">Email:
-                    <a href="mailto:email@example.com">brandonslanger@gmail.com</a>
-                    </p>
+                <a href="mailto:email@example.com">brandonslanger@gmail.com</a>
+                </p>
                 <p>School:</p>
             </div>
         </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-</body>
-</html>
+    `
+}

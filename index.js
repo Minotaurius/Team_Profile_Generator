@@ -123,10 +123,11 @@ function addEmployees() {
             })
         }
         else if (answer.role === 'Finsihed Adding Employees') {
-            // fs.writeFile c
+            fs.writeFile ('index.html',`
+            
+            `
+            )
             console.log("You're employee list is complete");
-            console.log(teamArr);
-            return
         }
     })
     }
