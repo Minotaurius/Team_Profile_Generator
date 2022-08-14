@@ -3,18 +3,18 @@ const Engineer = require('../lib/Engineer')
 test('Creates a new employee with the role of Engineer', () => {
     const engineer = new Engineer ("Brandon Langer", 001, "brandonslanger@gmail.com", 'https://github.com/minotaurius')
     
-    expect(employee.name).toBe('Brandon Langer');
-    expect(employee.id).toEqual(expect.any(Number));
-    expect(employee.email).toEqual(expect.any(String));
-    expect(employee.github).toEqual(expect.any(String));
+    expect(engineer.name).toBe('Brandon Langer');
+    expect(engineer.id).toEqual(expect.any(Number));
+    expect(engineer.email).toEqual(expect.any(String));
+    expect(engineer.github).toEqual(expect.any(String));
 })
 
 test('Checking that our methods are returning the correct properties', () => {
-    const employee = new Employee ("Brandon Langer", 28, "brandonslanger@gmail.com")
+    const engineer = new Engineer ("Brandon Langer", 001, "brandonslanger@gmail.com")
 
-    expect(employee.getName()).toBe(employee.name);
-    expect(employee.getId()).toEqual(employee.id);
-    expect(employee.getEmail()).toEqual(employee.email);
-    expect(employee.getGithub()).toEqual(employee.github);
-    expect(employee.getRole()).toBe('Employee')
+    expect(engineer.getName()).toBe(engineer.name);
+    expect(engineer.getId()).toEqual(engineer.id);
+    expect(engineer.getEmail()).toEqual(engineer.email);
+    expect(engineer.getGithub()).toEqual(engineer.github);
+    expect(engineer.getRole()).toBe('Engineer')
 })
